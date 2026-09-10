@@ -11,7 +11,7 @@ and controls are preserved. Motion enhancements animate the existing visuals:
 - Reduced-motion support; offscreen animations are cancelled.
 
 Selected 3D enhancements (original content retained):
-- Slide 1: original poster styled as a raised card with gentle pointer tilt.
+- Slide 1: original poster styled as a raised card, automatically floating and tilting in a continuous 10-second loop while visible.
 - Slide 11: rotating fine gold-wire donut.
 - Slide 16: floating 6×5 gold-wire lattice matching the donut.
 - Slide 18: gold contour outlines, flowing connections, and perspective movement on the original mind map and format cards.

@@ -2009,20 +2009,30 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnim
 @media(prefers-reduced-motion:reduce){.slide[data-t="Title"] .portrait.poster{transform:none;transition:none}}
 @media print{.slide[data-t="Title"] .portrait.poster{transform:none;box-shadow:none}}
 </style>
-<script id="hero-card-pointer">
+<script id="hero-card-autoplay">
 (()=>{
  const card=document.querySelector('.slide[data-t="Title"] .portrait.poster');
- if(!card)return;
- const host=card.parentElement,reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(hover: hover) and (pointer: fine)');
- let raf=0,x=0,y=0;
- function reset(){cancelAnimationFrame(raf);raf=0;['--card-rx','--card-ry','--light-x','--light-y'].forEach(key=>card.style.removeProperty(key));}
- host.addEventListener('pointermove',e=>{
-  if(reduced.matches||!fine.matches)return;
-  const r=host.getBoundingClientRect();x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));y=Math.max(0,Math.min(1,(e.clientY-r.top)/r.height));
-  if(raf)return;
-  raf=requestAnimationFrame(()=>{raf=0;card.style.setProperty('--card-rx',((.5-y)*8)+'deg');card.style.setProperty('--card-ry',((x-.5)*12)+'deg');card.style.setProperty('--light-x',(x*100)+'%');card.style.setProperty('--light-y',(y*100)+'%');});
- });
- host.addEventListener('pointerleave',reset);reduced.addEventListener('change',reset);
+ if(!card||!card.animate)return;
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ let visible=false,animation=null;
+ function sync(){
+  if(reduced.matches){if(animation)animation.cancel();animation=null;return;}
+  if(!animation){
+   animation=card.animate([
+    {transform:'translateY(0px) rotateX(2deg) rotateY(-7deg) rotateZ(-.4deg)'},
+    {transform:'translateY(-7px) rotateX(-2deg) rotateY(0deg) rotateZ(0deg)'},
+    {transform:'translateY(-3px) rotateX(2deg) rotateY(7deg) rotateZ(.4deg)'},
+    {transform:'translateY(4px) rotateX(4deg) rotateY(0deg) rotateZ(0deg)'},
+    {transform:'translateY(0px) rotateX(2deg) rotateY(-7deg) rotateZ(-.4deg)'}
+   ],{duration:10000,iterations:Infinity,easing:'ease-in-out',fill:'both'});
+   animation.pause();
+  }
+  if(visible&&!document.hidden)animation.play();else animation.pause();
+ }
+ new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync();},{root:document.getElementById('deck'),threshold:0}).observe(card);
+ reduced.addEventListener('change',sync);
+ document.addEventListener('visibilitychange',sync);
+ sync();
 })();
 </script>
 
