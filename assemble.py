@@ -5,7 +5,7 @@ BASE = pathlib.Path(__file__).resolve().parent
 OPT = BASE / "assets"
 
 MIME = {".jpg":"image/jpeg",".jpeg":"image/jpeg",".png":"image/png",
-        ".svg":"image/svg+xml",".webp":"image/webp"}
+        ".svg":"image/svg+xml",".webp":"image/webp",".mp4":"video/mp4"}
 
 def datauri(name):
     p = OPT / name
@@ -18,6 +18,7 @@ mapping = {
     "__HERO__": datauri("hero.jpg"),
     "__CHART__": datauri("chart.jpg"),
     "__PROFILE__": datauri("profile.jpg"),
+    "__FACEBOOK__": datauri("facebook.jpg"),
     "__C1__": datauri("c1.jpg"),
     "__C2__": datauri("c2.jpg"),
     "__C3__": datauri("c3.jpg"),
@@ -36,8 +37,8 @@ mapping = {
     "__P3__": datauri("p3.jpg"),
     "__ALI_1__": datauri("ali-1.jpg"),
     "__ALI_2__": datauri("ali-2.jpg"),
-    "__ALI_3__": datauri("ali-3.jpg"),
-    "__DISC_HERO__": datauri("disc-hero.webp"),
+    "__ALI_YT__": datauri("ali-yt.jpg"),
+    "__VIDEOOS_YT__": datauri("videoos-yt.jpg"),
     "__DISC_SEARCH__": datauri("disc-search.webp"),
     "__DISC_FILTERS__": datauri("disc-filters.webp"),
     "__DISC_SCRIPT__": datauri("disc-script.webp"),
@@ -45,7 +46,12 @@ mapping = {
     "__JUP_SCENES__": datauri("jup-scenes.png"),
     "__JUP_FX__": datauri("jup-fx.jpg"),
     "__POS_DEMO__": datauri("pos-demo.png"),
+    "__STITCH_MP4__": datauri("stitch-loop.mp4"),
     "__QR_IOS__": datauri("qr-ios.svg"),
+    "__QR_WA__": datauri("qr-whatsapp.png"),
+    "__ICON_GEMINI__": datauri("icon-gemini.svg"),
+    "__ICON_CHATGPT__": datauri("icon-chatgpt.svg"),
+    "__JUPCUT_ICON__": datauri("jupcut-icon.png"),
     "__QR_ANDROID__": datauri("qr-android.svg"),
     "__JUPAI_EDIT__": datauri("jupai-edit.webp"),
     "__JUPAI_BA__": datauri("jupai-ba.jpg"),
