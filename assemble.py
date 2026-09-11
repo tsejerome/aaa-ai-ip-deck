@@ -51,6 +51,8 @@ mapping = {
     "__QR_WA__": datauri("qr-whatsapp.png"),
     "__ICON_GEMINI__": datauri("icon-gemini.svg"),
     "__ICON_CHATGPT__": datauri("icon-chatgpt.svg"),
+    "__KALLAWAY_IG__": datauri("kallaway-ig.jpg"),
+    "__KALLAWAY_MP4__": datauri("kallaway-ig.mp4"),
     "__JUPCUT_ICON__": datauri("jupcut-icon.png"),
     "__QR_ANDROID__": datauri("qr-android.svg"),
     "__JUPAI_EDIT__": datauri("jupai-edit.webp"),

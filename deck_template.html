@@ -329,6 +329,8 @@
   .yt-embed{position:relative; border-radius:16px; border:1px solid var(--line-2); overflow:hidden; background:#000; box-shadow:var(--shadow); aspect-ratio:16/9; width:100%; align-self:center}
   .yt-embed iframe,.yt-embed .shot{position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:0}
   .yt-embed .shot img{width:100%; height:100%; object-fit:cover}
+  .ig-embed{position:relative; border-radius:16px; border:1px solid var(--line-2); overflow:hidden; background:#000; box-shadow:var(--shadow); height:min(64vh,560px); aspect-ratio:9/16}
+  .ig-embed video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; background:#000}
   .rs-steps .step{flex:1; padding:clamp(12px,1.4vw,18px) clamp(14px,1.6vw,20px); display:flex; flex-direction:column; justify-content:center; gap:8px}
   .rs-steps .step .top{display:flex; align-items:center; gap:10px}
   .rs-steps .step .badge{width:40px; height:40px; font-size:19px; border-radius:11px}
@@ -1179,7 +1181,10 @@
         <div class="muted r" style="--i:3">題目同格式定咗，每日只需一個新角度</div>
       </div>
       </div>
-      <div class="spatial-art spatial-inline r" style="--i:2" aria-hidden="true"><canvas data-model="content"></canvas></div>
+      <div class="stack r ig-wrap" style="--i:2;align-items:center;gap:10px;justify-self:center">
+        <div class="ig-embed"><video controls playsinline preload="metadata" poster="__KALLAWAY_IG__" src="__KALLAWAY_MP4__" aria-label="30 days of content in 30 minutes · @kallawaymarketing"></video></div>
+        <div class="muted num" style="font-size:13px">@kallawaymarketing · 30 days of content in 30 minutes</div>
+      </div>
     </div>
   </section>
 
