@@ -2,7 +2,7 @@
 
 Open `deck.html` directly in a browser. Images and animations are self-contained.
 
-The original 36-slide design, content, illustrations, poster, colors, layouts,
+The original 36-slide design (now 35 after removing the Step 2 Research slide), content, illustrations, poster, colors, layouts,
 and controls are preserved. Motion enhancements animate the existing visuals:
 - Staggered slide entrances that replay when revisiting slides.
 - Gentle image and icon entrances, including the original cover poster.
@@ -15,8 +15,8 @@ Selected 3D enhancements (original content retained):
 - Slide 11: rotating fine gold-wire donut.
 - Slide 16: floating 6×5 gold-wire lattice matching the donut.
 - Slide 18: gold contour outlines, flowing connections, and perspective movement on the original mind map and format cards.
-- Slide 26: dimensional camera with a modeled lens.
-- Slide 28: larger folded paper plane with distinct wings and fold lines, viewed from above for a recognizable silhouette.
+- Slide 25: dimensional camera with a modeled lens.
+- Slide 27: larger folded paper plane with distinct wings and fold lines, viewed from above for a recognizable silhouette.
 
 The four canvas scenes use inline 3D geometry and perspective projection,
 respond to the pointer, pause offscreen, and respect reduced motion.
