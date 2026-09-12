@@ -38,10 +38,10 @@ PDF: `node export_pdf.mjs <dir containing node_modules/playwright>` writes `deck
 identical in every viewer; YouTube thumbnails, the @kallawaymarketing reel poster and
 the Jupitrr Cut animation are clickable links. Example: `node export_pdf.mjs ../../jupitrr/landing`.
 
-Hosting: the deck is served as a standalone page from the `web` app at `/deck`
-(`web/public/deck/` holds a copy of `index.html` + `assets/`; a redirect in
-`web/next.config.mjs` maps `/deck` to `/deck/index.html`). After rebuilding, re-copy:
-`cp index.html ../web/public/deck/ && rsync -a --delete assets/ ../web/public/deck/assets/`.
+Hosting: the deck is served as a standalone page from the `web` app at `/personal-ip/free-deck`
+(`web/public/personal-ip/free-deck/` holds a copy of `index.html` + `assets/`; a redirect in
+`web/next.config.mjs` maps that path to its `index.html`; `/deck` redirects there too). After rebuilding, re-copy:
+`cp index.html ../web/public/personal-ip/free-deck/ && rsync -a --delete assets/ ../web/public/personal-ip/free-deck/assets/`.
 
 Validation: script syntax, original markup/content/visual preservation,
 original CSS preservation, resolved asset tokens, and 3D geometry checked.
